@@ -1,0 +1,14 @@
+version: "3"
+
+services:
+  wrapper:
+    build:
+      context: image
+      dockerfile: Dockerfile
+    container_name: "1c_project"
+    cap_add:
+      - SYS_PTRACE
+    stdin_open: true
+    tty: true
+    volumes:
+      - ../:/workspace
